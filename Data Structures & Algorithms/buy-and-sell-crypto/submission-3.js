@@ -1,0 +1,21 @@
+class Solution {
+    /**
+     * @param {number[]} prices
+     * @return {number}
+     */
+    maxProfit(prices) {
+        let minPrice = Infinity;
+        let maxProfit = 0;
+        for (let price of prices) {
+            if (price < minPrice) {
+                minPrice = price
+            } else {
+                let currentProfit = price - minPrice
+                if (currentProfit > maxProfit) {
+                    maxProfit = currentProfit
+                }
+            }
+        }
+        return maxProfit
+    }
+}
