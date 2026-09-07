@@ -1,0 +1,22 @@
+class Solution {
+    /**
+     * @param {string} s
+     * @return {boolean}
+     */
+    isPalindrome(s) {
+        let cleanString = s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+        let left = 0
+        let right = cleanString.length - 1;
+
+        while (left < right) {
+            if (cleanString[left] !== cleanString[right]) {
+                return false;
+            } else {
+                left++;
+                right--;
+            }
+        }
+        return true;
+    }
+}
