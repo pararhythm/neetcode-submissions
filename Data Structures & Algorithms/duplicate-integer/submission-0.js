@@ -4,13 +4,12 @@ class Solution {
      * @return {boolean}
      */
     hasDuplicate(nums) {
-        const map = new Map()
-        for (let i = 0; i < nums.length; i++) {
-            let target = nums[i];
-            if (map.has(target)) {
+        const set = new Set();
+        for (let num of nums) {
+            if (set.has(num)) {
                 return true;
             } else {
-                map.set(nums[i], i);
+                set.add(num);
             }
         }
         return false;
